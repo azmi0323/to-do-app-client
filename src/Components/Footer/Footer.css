@@ -1,0 +1,45 @@
+
+  .text-small {
+    font-size: 0.9rem;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+  
+  .form-control {
+    background: #212529;
+    border-color: #9c3434;
+  }
+  
+  .form-control:focus {
+    background: #3f80c1;
+  }
+  
+  footer {
+    background: #3b144f;
+  }
+  
+  body,
+  html {
+    height: 100%;
+  }
+  
+  .footer-style {
+      text-decoration: none;
+      color: rgb(53, 196, 253);
+  }
+  footer a:hover{
+    width: 200px;
+    background: transparent;
+    color: #2ecc71;
+    padding-left: 15px;
+  }
+  
