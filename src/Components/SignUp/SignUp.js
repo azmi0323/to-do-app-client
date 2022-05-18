@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import bg2 from '../../img/bg2.png'
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
@@ -52,8 +53,8 @@ const SignUp = () => {
   }
   return (
     <div className="row container mx-auto">
-      <div className="col-lg-8">
-        <img className="img-fluid mt-2" src="" alt="" />
+      <div className="col-lg-8 d-flex align-items-center justify-content-center">
+        <img className="img-fluid mt-2" src={bg2} alt="" />
       </div>
       <div className="col-lg-4 my-5 px-5 py-3 form-container">
         <div className="  my-4">
