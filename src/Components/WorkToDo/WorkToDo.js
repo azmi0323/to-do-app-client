@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { Card, CardGroup } from "react-bootstrap";
+import axios from "axios";
 
-const WorkToDo = () => {
+const WorkToDo = ({setLoading}) => {
   const [todoName, setTodoName] = useState("");
   const [todoBody, setTodoBody] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    axios.post('todo',{todoName,todoBody,done:false})
+    .then(res=>setLoading(true))
   };
 
   return (
@@ -49,14 +51,7 @@ const WorkToDo = () => {
       </div>
       <div>
         <div>
-          <CardGroup>
-            <Card>
-              <Card.Body>
-                <Card.Title>{todoName}</Card.Title>
-                <Card.Text>{todoBody}</Card.Text>
-              </Card.Body>
-            </Card>
-          </CardGroup>
+          
         </div>
       </div>
     </div>
