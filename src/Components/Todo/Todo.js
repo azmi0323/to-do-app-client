@@ -15,7 +15,16 @@ const Todo = () => {
 
   const handleRemove = (id) => {
     axios.delete(`/todo/${id}`).then((res) => {
-      setLoading(true)
+      setLoading(true);
+      alert('Are you sure, you want to delete this activities? ')
+    });
+  };
+  const handleDone = (id) => {
+    axios.put(`/todo/${id}`, { done: true }).then((res) => {
+      if (res.data) {
+        setLoading(true);
+        alert('yeeeeeeee!!!!!!! You have done the activities ')
+      }
     });
   };
   if (loading) {
@@ -23,7 +32,7 @@ const Todo = () => {
   }
   return (
     <div>
-        <WorkToDo setLoading={setLoading}></WorkToDo>
+      <WorkToDo setLoading={setLoading}></WorkToDo>
       {todo.map((singleTodo) => (
         <CardGroup key={singleTodo._id}>
           <Card>
@@ -32,11 +41,16 @@ const Todo = () => {
               <Card.Text>{singleTodo.todo.todoBody}</Card.Text>
               <button
                 onClick={() => handleRemove(singleTodo._id)}
-                className="btn-danger"
+                className="btn me-2 btn-danger"
               >
                 delete
               </button>
-              <button className="btn-success">update</button>
+              <button
+                onClick={() => handleDone(singleTodo._id)}
+                className="btn btn-success"
+              >
+                Done
+              </button>
             </Card.Body>
           </Card>
         </CardGroup>
