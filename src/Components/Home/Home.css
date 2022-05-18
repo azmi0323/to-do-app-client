@@ -1,0 +1,10 @@
+.bannerSecond{
+    background-image: url('../../img/android.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    
+}

@@ -24,8 +24,8 @@ const WorkToDo = () => {
             <input
              
               className="w-100 input-field"
-              type="text-area"
-              name=""
+              type="textarea"
+              name="textarea"
               id=""
               required
             />
