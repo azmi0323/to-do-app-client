@@ -9,6 +9,7 @@ import WorkToDo from "./Components/WorkToDo/WorkToDo";
 import SignUp from "./Components/SignUp/SignUp";
 import Footer from "./Components/Footer/Footer";
 import RequireAuth from "./Components/RequirAuth";
+import NotFound from "./Components/NotFound/NotFound";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signUp" element={<SignUp></SignUp>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

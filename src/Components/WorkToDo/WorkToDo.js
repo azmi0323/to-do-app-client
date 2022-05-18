@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from "react";
+import { Card, CardGroup } from "react-bootstrap";
 
 const WorkToDo = () => {
-    return (
-        <div className=" my-5 mx-auto w-50 px-5 py-3 form-container">
+  const [todoName, setTodoName] = useState("");
+  const [todoBody, setTodoBody] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  return (
+    <div>
+      <div className=" my-5 mx-auto w-50 px-5 py-3 form-container">
         <div className="">
-          <form className=" mx-auto">
+          <form onSubmit={handleSubmit} className=" mx-auto">
             <h3 className="text-center text-primary fw-bold pt-4">
               Add Todo Task
             </h3>
@@ -15,6 +24,7 @@ const WorkToDo = () => {
               className="w-100 input-field"
               type="text"
               name=""
+              onChange={(e) => setTodoName(e.target.value)}
               id=""
               required
             />
@@ -22,10 +32,10 @@ const WorkToDo = () => {
               Task Details:
             </label>
             <input
-             
               className="w-100 input-field"
               type="textarea"
               name="textarea"
+              onChange={(e) => setTodoBody(e.target.value)}
               id=""
               required
             />
@@ -34,12 +44,23 @@ const WorkToDo = () => {
               type="submit"
               value="Add Task"
             />
-            
-            
           </form>
         </div>
       </div>
-    );
+      <div>
+        <div>
+          <CardGroup>
+            <Card>
+              <Card.Body>
+                <Card.Title>{todoName}</Card.Title>
+                <Card.Text>{todoBody}</Card.Text>
+              </Card.Body>
+            </Card>
+          </CardGroup>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default WorkToDo;
