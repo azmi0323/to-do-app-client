@@ -6,6 +6,7 @@ import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import About from "./Components/About/About";
 import WorkToDo from "./Components/WorkToDo/WorkToDo";
+import SignUp from "./Components/SignUp/SignUp";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/workToDo" element={<WorkToDo></WorkToDo>}></Route>
         
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signUp" element={<SignUp></SignUp>}></Route>
       </Routes>
     </div>
   );

@@ -109,9 +109,9 @@ const Login = () => {
             Create an Account
               </Link>
             </p>
-            <p>
+            <p >
               Forget Password?{" "}
-              <span onClick={handleForgetPassword} className="text-danger">
+              <span onClick={handleForgetPassword} className="text-danger fw-bold pointer">
                 Reset Password
               </span>
             </p>

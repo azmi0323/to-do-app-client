@@ -6,6 +6,10 @@
     -moz-box-shadow: 15px -6px 47px 4px rgba(1, 4, 5, 0.23);
     
 }
+.pointer{
+    cursor: pointer;
+    
+}
 .input-field{
     font-size: 20px;
     border-radius: 20px;
