@@ -23,7 +23,7 @@ const Todo = () => {
     axios.put(`/todo/${id}`, { done: true }).then((res) => {
       if (res.data) {
         setLoading(true);
-        alert('yeeeeeeee!!!!!!! You have done the activities ')
+        
       }
     });
   };
@@ -31,14 +31,19 @@ const Todo = () => {
     return <p>Loading...</p>;
   }
   return (
-    <div>
+    <div className="">
       <WorkToDo setLoading={setLoading}></WorkToDo>
+      <div className="container">
+      <div className="row g-4  row-cols-lg-3 row-cols-1">
       {todo.map((singleTodo) => (
-        <CardGroup key={singleTodo._id}>
+       <div className="col" key={singleTodo._id}>
+          <CardGroup >
           <Card>
             <Card.Body>
+              <div className={singleTodo.done?'text-decoration-line-through':''}>
               <Card.Title>{singleTodo.todo.todoName}</Card.Title>
               <Card.Text>{singleTodo.todo.todoBody}</Card.Text>
+              </div>
               <button
                 onClick={() => handleRemove(singleTodo._id)}
                 className="btn me-2 btn-danger"
@@ -54,7 +59,10 @@ const Todo = () => {
             </Card.Body>
           </Card>
         </CardGroup>
+       </div>
       ))}
+      </div>
+      </div>
     </div>
   );
 };
